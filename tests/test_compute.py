@@ -1,7 +1,7 @@
 import unittest
 
-from verbum_shabda.compute import compute
-from verbum_shabda.md4 import md4
+from shabda.compute import compute
+from shabda.md4 import md4
 
 
 class TestCompute(unittest.TestCase):

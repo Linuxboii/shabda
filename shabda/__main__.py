@@ -1,4 +1,4 @@
-"""Command-line interface for verbum-shabda."""
+"""Command-line interface for shabda."""
 
 from __future__ import annotations
 
@@ -108,7 +108,7 @@ def cmd_hash(args) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="verbum-shabda",
+        prog="shabda",
         description="Identify likely hash algorithms, or compute hashes of text/files.",
         epilog="Defensive/educational use only: analyze hashes from systems you own "
         "or are authorized to assess.",

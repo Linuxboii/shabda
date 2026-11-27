@@ -1,10 +1,10 @@
-# verbum-shabda
+# shabda
 
 Identify likely hash algorithms from a string, and compute hashes of text or files.
 
 ## The name
 
-*verbum* is Latin for "word". *śabda* (शब्द) is Sanskrit for "sound" or "word".
+*śabda* (शब्द) is Sanskrit for "sound" or "word".
 A hash is a word pressed down to a fixed shape; this tool reads that shape and
 tells you what kind of word it probably was.
 
@@ -27,15 +27,15 @@ tells you what kind of word it probably was.
 Requires Python 3.10+.
 
 ```sh
-git clone https://github.com/Linuxboii/verbum-shabda
-cd verbum-shabda
-pip install .            # installs the `verbum-shabda` command
+git clone https://github.com/Linuxboii/shabda
+cd shabda
+pip install .            # installs the `shabda` command
 ```
 
 Or run straight from the source tree without installing:
 
 ```sh
-python -m verbum_shabda --help
+python -m shabda --help
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ python -m verbum_shabda --help
 ### Identify a hash
 
 ```
-$ verbum-shabda identify 5f4dcc3b5aa765d61d8327deb882cf99
+$ shabda identify 5f4dcc3b5aa765d61d8327deb882cf99
 
   hash: 5f4dcc3b5aa765d61d8327deb882cf99
     ALGORITHM                          CONF    HASHCAT  JOHN
@@ -60,7 +60,7 @@ $ verbum-shabda identify 5f4dcc3b5aa765d61d8327deb882cf99
 Prefixed hashes resolve to a single high-confidence answer:
 
 ```
-$ verbum-shabda identify '$2b$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW'
+$ shabda identify '$2b$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW'
 
   hash: $2b$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW
     ALGORITHM                          CONF    HASHCAT  JOHN
@@ -71,7 +71,7 @@ $ verbum-shabda identify '$2b$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t
 Identify a file of hashes and emit JSON:
 
 ```
-$ verbum-shabda identify --file hashes.txt --json
+$ shabda identify --file hashes.txt --json
 [
   {
     "hash": "...",
@@ -85,17 +85,17 @@ $ verbum-shabda identify --file hashes.txt --json
 ### Compute hashes
 
 ```
-$ verbum-shabda hash password -a ntlm
+$ shabda hash password -a ntlm
 ntlm  8846f7eaee8fb117ad06bdd830b7586c
 
-$ verbum-shabda hash "abc" --all
+$ shabda hash "abc" --all
 md5       900150983cd24fb0d6963f7d28e17f72
 sha1      a9993e364706816aba3e25717850c26c9cd0d89d
 sha256    ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
 ...
 
-$ echo -n "data" | verbum-shabda hash -a sha512
-$ verbum-shabda hash --file ./archive.zip -a sha256
+$ echo -n "data" | shabda hash -a sha512
+$ shabda hash --file ./archive.zip -a sha256
 ```
 
 ## Notes on accuracy

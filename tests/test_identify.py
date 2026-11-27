@@ -1,6 +1,6 @@
 import unittest
 
-from verbum_shabda.identify import identify
+from shabda.identify import identify
 
 
 def names(hash_str):
