@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verbum-shabda"
+version = "1.0.0"
+description = "Hash identifier and hashing utility (stdlib only)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sushanth Kasturi" }]
+keywords = ["hash", "security", "hashcat", "john", "identifier"]
+
+[project.scripts]
+verbum-shabda = "verbum_shabda.__main__:main"
+
+[tool.setuptools]
+packages = ["verbum_shabda"]
